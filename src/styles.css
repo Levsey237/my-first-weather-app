@@ -1,0 +1,129 @@
+body {
+  background: aqua;
+  font-family: "Readex Pro", sans-serif;
+}
+
+header {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+form {
+  display: block;
+  font-size: 65px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 1rem;
+  padding-top: 10px;
+  border-top: 1px solid orange;
+}
+
+.weather-app {
+  border: 2px solid orange;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 900px;
+  display: block;
+  margin: 10px auto;
+}
+
+.search-bar {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 1rem;
+}
+
+.search-button {
+  font-size: 55px;
+  color: orange;
+  transition: all 175ms ease-in-out;
+}
+
+.search-button:hover {
+  font-size: 65px;
+  color: orange;
+}
+
+.favorite-icon {
+  font-size: 30px;
+  color: orange;
+}
+
+.saved-city {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.day-time {
+  margin-left: 1rem;
+  margin-bottom: 0;
+  font-size: 18px;
+}
+.date {
+  margin-left: 1rem;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.currently-in {
+  margin-bottom: 0;
+}
+
+.city-name {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.add-favorite-btn {
+  font-size: 12px;
+  padding: 2px 8px;
+  background-color: orange;
+  border-color: orange;
+}
+
+.weather-data {
+  margin-left: 1rem;
+  font-size: 16px;
+  list-style: none;
+  line-height: 2rem;
+}
+
+.data-number {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.temperature {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.sky {
+  margin: 10px 50px 0 0;
+  color: orange;
+  font-size: 60px;
+}
+
+.forecast {
+  list-style: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 2.5rem;
+}
+
+.temp-min {
+  font-weight: lighter;
+}
