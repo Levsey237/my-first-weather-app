@@ -1,3 +1,4 @@
+alert("Hello Netlify!");
 // Display Temperature
 
 function displayTemperature(response) {
