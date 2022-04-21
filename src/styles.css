@@ -127,3 +127,8 @@ footer {
 .temp-min {
   font-weight: lighter;
 }
+
+.toGitHubLink {
+  text-align: center;
+  padding-bottom: 1rem;
+}
