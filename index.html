@@ -29,17 +29,23 @@
     <div class="container">
       <header>
         <form id="searchCityForm">
-          <input
-            type="search"
-            class="col-10 search-bar"
-            id="searchedCity"
-            autocomplete="off"
-            autofocus
-            placeholder="Search a city"
-          />
-          <button type="submit" class="col btn btn-default search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          <div class="row">
+            <div class="col-10">
+              <input
+                type="search"
+                class="search-bar"
+                id="searchedCity"
+                autocomplete="off"
+                autofocus
+                placeholder="Search a city"
+              />
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-default search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
         </form>
       </header>
 
@@ -113,7 +119,7 @@
               <span id="temperature"></span><span>°</span>
 
               <span class="unit">
-                <a href="#" id="celsius-link">C</a> |
+                <a href="#" id="celsius-link" class="active">C</a> |
                 <a href="#" id="fahrenheit-link">F</a>
               </span>
             </div>
@@ -165,7 +171,7 @@
           ><a
             href="https://github.com/Levsey237/my-first-weather-app"
             target="_blank"
-            >Open-source coded</a
+            >Open-source code</a
           >
           by Levsey</small
         >

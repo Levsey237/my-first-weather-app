@@ -21,6 +21,8 @@ function displayTemperature(response) {
   document
     .querySelector("#skyIcon")
     .setAttribute("alt", response.data.weather[0].main);
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 // Search bar
@@ -113,19 +115,30 @@ displayedDate.innerHTML = `${month} ${date}, ${year}`;
 // Fahrenheit/Celsius Link
 function changeUnitToFahrenheit(event) {
   event.preventDefault();
-  let tempNumber = document.querySelector("#temperature");
-  tempNumber.innerHTML = "66";
+  let temperature = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  //remove the active class from celsius, add it to fahrenheit
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
-let fahrenheitClick = document.querySelector("#fahrenheit-link");
-fahrenheitClick.addEventListener("click", changeUnitToFahrenheit);
 
 function changeUnitToCelsius(event) {
   event.preventDefault();
-  let tempNumber = document.querySelector("#temperature");
-  tempNumber.innerHTML = "19";
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  //remove the active class from fahrenheit, add it to celsius
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
-let celsiusClick = document.querySelector("#celsius-link");
-celsiusClick.addEventListener("click", changeUnitToCelsius);
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeUnitToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeUnitToCelsius);
 
 // Searched city on load
 searchCity("Tbilisi");

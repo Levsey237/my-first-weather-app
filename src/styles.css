@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  margin: 10px auto;
+  margin: 0 auto;
   max-width: 900px;
 }
 
@@ -108,6 +108,12 @@ footer {
 .unit {
   font-size: 26px;
   font-weight: normal;
+}
+
+.unit .active {
+  color: black;
+  cursor: default;
+  font-weight: bold;
 }
 
 .skyIcon {
