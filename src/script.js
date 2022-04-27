@@ -7,9 +7,8 @@ function displayTemperature(response) {
     response.data.main.temp
   );
   document.querySelector("#sky").innerHTML = response.data.weather[0].main;
-  document.querySelector("#humidityData").innerHTML =
-    response.data.main.humidity;
-  document.querySelector("#windData").innerHTML = Math.round(
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document

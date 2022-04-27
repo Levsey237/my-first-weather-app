@@ -22,7 +22,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
-    <title>Forecast</title>
+    <title>Weather App</title>
   </head>
 
   <body>
@@ -97,20 +97,21 @@
           <div class="col">
             <ul class="weather-data">
               <li>
-                <span class="data-number" id="sky"></span>
+                <span class="data-value" id="sky"></span>
               </li>
               <li>
-                <span class="data-number" id="humidityData"></span
-                ><span class="data-number"> %</span> humidity
+                <span class="data-value" id="humidity"></span
+                ><span class="data-value"> % </span> humidity
               </li>
               <li>
-                <span class="data-number" id="windData"></span
-                ><span class="data-number"> km/h</span> wind
+                <span class="data-value" id="wind"></span
+                ><span class="data-value"> km/h </span>
+                wind
               </li>
             </ul>
           </div>
 
-          <div class="col skyIcon text-end">
+          <div class="col skyIcon text-center">
             <img src="" alt="" id="skyIcon" />
           </div>
 
