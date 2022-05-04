@@ -21,29 +21,54 @@ function displayTemperature(response) {
     .setAttribute("alt", response.data.weather[0].main);
 
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 // Display forecast
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastBlock = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+
   // create a "row" as used in Bootstrap
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-      <div class="forecast-date">${day}</div>
-      <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="" />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+      <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
+      <img src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" alt="" />
       <div class="forecast-temperature">
-        <span class="forecast-temp-max">20°</span>
-        <span class="forecast-temp-min"> / 15° </span>
+        <span class="forecast-temp-max">${Math.round(
+          forecastDay.temp.max
+        )}°</span>
+        <span class="forecast-temp-min"> / ${Math.round(
+          forecastDay.temp.min
+        )}° </span>
       </div>
     </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastBlock.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "1c59aa10195cdb81c9ef5cae00f1f45d";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
+
+// transform the forecast's day into readable day
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 // Search bar
@@ -163,4 +188,3 @@ celsiusLink.addEventListener("click", changeUnitToCelsius);
 
 // Searched city on load
 searchCity("Tbilisi");
-displayForecast();
