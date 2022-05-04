@@ -18,9 +18,8 @@ a:link {
 }
 
 footer {
-  margin-top: 1rem;
-  padding-top: 10px;
-  border-top: 1px solid orange;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .weather-app {
@@ -122,19 +121,15 @@ footer {
   margin-right: 50px;
 }
 
-.forecast {
-  list-style: none;
+.weather-forecast {
+  margin-top: 1rem;
+  padding-top: 10px;
+  border-top: 1px solid orange;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-  line-height: 2.5rem;
 }
 
-.temp-min {
+.forecast-temp-min {
   font-weight: lighter;
-}
-
-.gitHubLink {
-  text-align: center;
-  padding-bottom: 1rem;
 }
