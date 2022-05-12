@@ -22,6 +22,62 @@ function displayTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
 
+  // Change colors depending on sky conditions
+  function changeColors() {
+    let mainColor = `--main`;
+    let popColor = `--pop`;
+    let fontColor = `--font`;
+    let skyDescription = document.querySelector("#sky");
+    skyDescription.innerHTML = response.data.weather[0].main;
+
+    if (skyDescription.innerHTML === "Clear") {
+      document.documentElement.style.setProperty(mainColor, `#87fce2`);
+      document.documentElement.style.setProperty(popColor, `#fec100`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Clouds") {
+      document.documentElement.style.setProperty(mainColor, `#5BA0D1`);
+      document.documentElement.style.setProperty(popColor, `#F7F3F0`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Rain") {
+      document.documentElement.style.setProperty(mainColor, `#A4BED7`);
+      document.documentElement.style.setProperty(popColor, `#F6D840`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Mist") {
+      document.documentElement.style.setProperty(mainColor, `#e7eaf6`);
+      document.documentElement.style.setProperty(popColor, `#ea8a8a`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Snow") {
+      document.documentElement.style.setProperty(mainColor, `#fdfff0`);
+      document.documentElement.style.setProperty(popColor, `#a2ef44`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Fog") {
+      document.documentElement.style.setProperty(mainColor, `#c7db78`);
+      document.documentElement.style.setProperty(popColor, `#a98bbb`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Drizzle") {
+      document.documentElement.style.setProperty(mainColor, `#E3DBDB`);
+      document.documentElement.style.setProperty(popColor, `#7161EF`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Thunderstorm") {
+      document.documentElement.style.setProperty(mainColor, `#A5769A`);
+      document.documentElement.style.setProperty(popColor, `#F5D127`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+    if (skyDescription.innerHTML === "Haze") {
+      document.documentElement.style.setProperty(mainColor, `#D4C4AB`);
+      document.documentElement.style.setProperty(popColor, `#ED9759`);
+      document.documentElement.style.setProperty(fontColor, `#222831`);
+    }
+  }
+
+  changeColors();
   getForecast(response.data.coord);
 }
 
@@ -101,17 +157,6 @@ function findCurrentLocation(event) {
 
 let currentLocationBtn = document.querySelector("#currentLocationButton");
 currentLocationBtn.addEventListener("click", findCurrentLocation);
-
-// Add to my favorite Button
-function addToFavorite(event) {
-  event.preventDefault();
-  let favoriteOne = document.querySelector("#favoriteCityOne");
-  let chosenCity = document.querySelector("#displayedCity");
-  favoriteOne.innerHTML = chosenCity.value;
-}
-
-let addToFavoriteBtn = document.querySelector("#addFavButton");
-addToFavoriteBtn.addEventListener("click", addToFavorite);
 
 // Current Date
 let now = new Date();

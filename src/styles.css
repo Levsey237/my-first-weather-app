@@ -1,6 +1,13 @@
+:root {
+  --main: ;
+  --pop: ;
+  --font: #222831;
+}
+
 body {
-  background: aqua;
+  background: var(--main);
   font-family: "Readex Pro", sans-serif;
+  color: var(--font);
 }
 
 header {
@@ -23,12 +30,12 @@ footer {
 }
 
 .weather-app {
-  border: 2px solid orange;
+  border: 2px solid var(--pop);
   border-radius: 10px;
   padding: 10px;
   max-width: 900px;
   display: block;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 .search-bar {
@@ -40,23 +47,13 @@ footer {
 
 .search-button {
   font-size: 55px;
-  color: orange;
+  color: var(--pop);
   transition: all 175ms ease-in-out;
 }
 
 .search-button:hover {
   font-size: 65px;
-  color: orange;
-}
-
-.favorite-icon {
-  font-size: 30px;
-  color: orange;
-}
-
-.saved-city {
-  text-align: center;
-  margin-top: 0.5rem;
+  color: var(--pop);
 }
 
 .day-time {
@@ -78,13 +75,6 @@ footer {
   margin-bottom: 0;
   text-transform: uppercase;
   font-size: 50px;
-}
-
-.add-favorite-btn {
-  font-size: 12px;
-  padding: 2px 8px;
-  background-color: orange;
-  border-color: orange;
 }
 
 .weather-data {
@@ -110,13 +100,13 @@ footer {
 }
 
 .unit .active {
-  color: black;
+  color: var(--font);
   cursor: default;
   font-weight: bold;
 }
 
 .skyIcon {
-  color: orange;
+  color: var(--pop);
   font-size: 60px;
   margin-right: 50px;
 }
@@ -124,7 +114,7 @@ footer {
 .weather-forecast {
   margin-top: 1rem;
   padding-top: 10px;
-  border-top: 1px solid orange;
+  border-top: 1px solid var(--pop);
   text-align: center;
   font-size: 16px;
   font-weight: bold;
