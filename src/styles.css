@@ -30,7 +30,7 @@ footer {
 }
 
 .weather-app {
-  border: 2px solid var(--pop);
+  border: 3px solid var(--pop);
   border-radius: 10px;
   padding: 10px;
   max-width: 900px;
@@ -77,6 +77,18 @@ footer {
   font-size: 50px;
 }
 
+.current-location-btn {
+  font-size: 12px;
+  padding: 2px 8px;
+  background-color: var(--pop);
+  border: 2px solid var(--pop);
+}
+
+.current-location-btn:hover {
+  background-color: var(--main);
+  border: 2px solid var(--pop);
+}
+
 .weather-data {
   margin-left: 1rem;
   font-size: 16px;
@@ -114,7 +126,7 @@ footer {
 .weather-forecast {
   margin-top: 1rem;
   padding-top: 10px;
-  border-top: 1px solid var(--pop);
+  border-top: 2px solid var(--pop);
   text-align: center;
   font-size: 16px;
   font-weight: bold;
