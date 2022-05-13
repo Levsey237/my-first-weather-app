@@ -85,6 +85,9 @@ function displayTemperature(response) {
   changeColors();
 
   getForecast(response.data.coord);
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 // Convert ISO country name into full country name
@@ -378,7 +381,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "1c59aa10195cdb81c9ef5cae00f1f45d";
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(displayForecast);
 }
 
@@ -393,7 +396,7 @@ function formatDay(timestamp) {
 // Search bar
 function searchCity(city) {
   let apiKey = "1c59aa10195cdb81c9ef5cae00f1f45d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -407,15 +410,15 @@ let searchForm = document.querySelector("#searchCityForm");
 searchForm.addEventListener("submit", showSearchedCity);
 
 // Current Location Button
-function searchCurrentLocation(position) {
+function retreivePosition(position) {
   let apiKey = "1c59aa10195cdb81c9ef5cae00f1f45d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function findCurrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+  navigator.geolocation.getCurrentPosition(retreivePosition);
 }
 
 let currentLocationBtn = document.querySelector("#currentLocationButton");
@@ -469,24 +472,29 @@ displayedDate.innerHTML = `${month} ${date}, ${year}`;
 // Fahrenheit/Celsius Link
 function changeUnitToFahrenheit(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
   //remove the active class from celsius, add it to fahrenheit
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
+  let temperature = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  units = "imperial";
+  getForecast();
 }
 
 function changeUnitToCelsius(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
   //remove the active class from fahrenheit, add it to celsius
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  units = "metric";
+  getForecast();
 }
 
 let celsiusTemperature = null;
+let units = "metric";
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeUnitToFahrenheit);
