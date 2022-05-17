@@ -20,8 +20,6 @@ function displayTemperature(response) {
     .querySelector("#skyIcon")
     .setAttribute("alt", response.data.weather[0].main);
 
-  celsiusTemperature = response.data.main.temp;
-
   // Convert ISO country name into full country name
   document.querySelector("#country").innerHTML = `${getCountryName(
     response.data.sys.country
@@ -36,7 +34,7 @@ function displayTemperature(response) {
     skyDescription.innerHTML = response.data.weather[0].main;
 
     if (skyDescription.innerHTML === "Clear") {
-      document.documentElement.style.setProperty(mainColor, `#87fce2`);
+      document.documentElement.style.setProperty(mainColor, `#77FCFA`);
       document.documentElement.style.setProperty(popColor, `#fec100`);
     }
     if (skyDescription.innerHTML === "Clouds") {
@@ -68,17 +66,14 @@ function displayTemperature(response) {
       document.documentElement.style.setProperty(popColor, `#F5D127`);
     }
     if (skyDescription.innerHTML === "Haze") {
-      document.documentElement.style.setProperty(mainColor, `#D4C4AB`);
-      document.documentElement.style.setProperty(popColor, `#ED9759`);
+      document.documentElement.style.setProperty(mainColor, `#D2ABDB`);
+      document.documentElement.style.setProperty(popColor, `#58825C`);
     }
   }
 
   changeColors();
 
   getForecast(response.data.coord);
-
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
 }
 
 // Convert ISO country name into full country name
@@ -461,38 +456,7 @@ displayedDayTime.innerHTML = `${day}, ${hours}:${minutes}`;
 
 displayedDate.innerHTML = `${month} ${date}, ${year}`;
 
-// Fahrenheit/Celsius Link
-function changeUnitToFahrenheit(event) {
-  event.preventDefault();
-  //remove the active class from celsius, add it to fahrenheit
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperature = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
-  units = "imperial";
-  getForecast();
-}
-
-function changeUnitToCelsius(event) {
-  event.preventDefault();
-  //remove the active class from fahrenheit, add it to celsius
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-  units = "metric";
-  getForecast();
-}
-
-let celsiusTemperature = null;
 let units = "metric";
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeUnitToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changeUnitToCelsius);
 
 // Searched city on load
 searchCity("Tbilisi");

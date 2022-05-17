@@ -23,18 +23,15 @@
 
 body {
   background: var(--main);
-  font-family: "Readex Pro", sans-serif;
   color: #222831;
-}
-
-header {
-  margin: 0 auto;
-  max-width: 700px;
+  font-family: "Readex Pro", sans-serif;
 }
 
 form {
   display: block;
   font-size: var(--fs-xlarge);
+  margin: 0 auto;
+  max-width: 750px;
 }
 
 a:link {
@@ -42,17 +39,17 @@ a:link {
 }
 
 footer {
-  text-align: center;
   padding-bottom: 1rem;
+  text-align: center;
 }
 
 .weather-app {
   border: 3px solid var(--pop);
   border-radius: 10px;
-  padding: 10px;
-  max-width: 700px;
   display: block;
   margin: 0 auto;
+  max-width: 750px;
+  padding: 10px;
 }
 
 .search-bar {
@@ -73,14 +70,14 @@ footer {
 }
 
 .day-time {
-  margin-left: 1rem;
-  margin-bottom: 0;
   font-size: var(--fs-xsmall);
+  margin-bottom: 0;
+  margin-left: 1rem;
 }
 .date {
-  margin-left: 1rem;
   font-size: var(--fs-medium);
   font-weight: 500;
+  margin-left: 1rem;
 }
 
 .currently-in {
@@ -88,16 +85,17 @@ footer {
 }
 
 .city-name {
+  font-size: var(--fs-large);
   margin-bottom: 0;
   text-transform: uppercase;
-  font-size: var(--fs-large);
 }
 
 .current-location-btn {
-  font-size: var(--fs-xxsmall);
-  padding: 2px 8px;
   background-color: var(--pop);
   border: 2px solid var(--pop);
+  font-size: var(--fs-xxsmall);
+  font-weight: 600;
+  padding: 2px 8px;
 }
 
 .current-location-btn:hover {
@@ -106,15 +104,15 @@ footer {
 }
 
 .weather-data {
-  margin-left: 1rem;
   font-size: var(--fs-xsmall);
-  list-style: none;
   line-height: 2rem;
+  list-style: none;
+  margin-left: 1rem;
 }
 
 .data-value {
-  font-weight: bold;
   font-size: var(--fs-small);
+  font-weight: bold;
 }
 
 .temperature {
@@ -125,26 +123,21 @@ footer {
 .unit {
   font-size: var(--fs-medium);
   font-weight: normal;
-}
-
-.unit .active {
-  color: #222831;
-  cursor: default;
-  font-weight: bold;
+  position: relative;
+  right: 5px;
 }
 
 .skyIcon {
   color: var(--pop);
-  margin-right: 50px;
 }
 
 .weather-forecast {
-  margin-top: 1rem;
-  padding-top: 10px;
   border-top: 2px solid var(--pop);
-  text-align: center;
   font-size: var(--fs-small);
   font-weight: bold;
+  margin-top: 1rem;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .forecast-temp-min {
