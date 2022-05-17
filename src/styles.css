@@ -1,22 +1,23 @@
 :root {
   --main: ;
   --pop: ;
-  --fs-form: 2rem;
+
+  --fs-xxsmall: 0.7rem;
+  --fs-xsmall: 0.9rem;
+  --fs-small: 1rem;
+  --fs-medium: 1.1rem;
+  --fs-large: 1.8rem;
+  --fs-xlarge: 2rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 750px) {
   :root {
-    --fs-current-location-btn: 0.7rem;
-    --fs-day-time: 1rem;
-    --fs-weather-data: 1rem;
-    --fs-weather-forecast: 1.1rem;
-    --fs-data-value: 1.1rem;
-    --fs-date: 1.6rem;
-    --fs-unit: 1.6rem;
-    --fs-city-name: 3.1rem;
-    --fs-temperature: 3.5rem;
-    --fs-search-btn: 4rem;
-    --fs-form: 4rem;
+    --fs-xxsmall: 0.7rem;
+    --fs-xsmall: 1rem;
+    --fs-small: 1.1rem;
+    --fs-medium: 1.6rem;
+    --fs-large: 3.1rem;
+    --fs-xlarge: 4rem;
   }
 }
 
@@ -28,12 +29,12 @@ body {
 
 header {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 700px;
 }
 
 form {
   display: block;
-  font-size: var(--fs-form);
+  font-size: var(--fs-xlarge);
 }
 
 a:link {
@@ -49,7 +50,7 @@ footer {
   border: 3px solid var(--pop);
   border-radius: 10px;
   padding: 10px;
-  max-width: 900px;
+  max-width: 700px;
   display: block;
   margin: 0 auto;
 }
@@ -62,7 +63,7 @@ footer {
 }
 
 .search-button {
-  font-size: var(--fs-search-btn);
+  font-size: var(--fs-xlarge);
   color: var(--pop);
   transition: all 175ms ease-in-out;
 }
@@ -74,11 +75,11 @@ footer {
 .day-time {
   margin-left: 1rem;
   margin-bottom: 0;
-  font-size: var(--fs-day-time);
+  font-size: var(--fs-xsmall);
 }
 .date {
   margin-left: 1rem;
-  font-size: var(--fs-date);
+  font-size: var(--fs-medium);
   font-weight: 500;
 }
 
@@ -89,11 +90,11 @@ footer {
 .city-name {
   margin-bottom: 0;
   text-transform: uppercase;
-  font-size: var(--fs-city-name);
+  font-size: var(--fs-large);
 }
 
 .current-location-btn {
-  font-size: var(--fs-current-location-btn);
+  font-size: var(--fs-xxsmall);
   padding: 2px 8px;
   background-color: var(--pop);
   border: 2px solid var(--pop);
@@ -106,23 +107,23 @@ footer {
 
 .weather-data {
   margin-left: 1rem;
-  font-size: var(--fs-weather-data);
+  font-size: var(--fs-xsmall);
   list-style: none;
   line-height: 2rem;
 }
 
 .data-value {
   font-weight: bold;
-  font-size: var(--fs-data-value);
+  font-size: var(--fs-small);
 }
 
 .temperature {
-  font-size: var(--fs-temperature);
+  font-size: var(--fs-large);
   font-weight: bold;
 }
 
 .unit {
-  font-size: var(--fs-unit);
+  font-size: var(--fs-medium);
   font-weight: normal;
 }
 
@@ -142,7 +143,7 @@ footer {
   padding-top: 10px;
   border-top: 2px solid var(--pop);
   text-align: center;
-  font-size: var(--fs-weather-forecast);
+  font-size: var(--fs-small);
   font-weight: bold;
 }
 
