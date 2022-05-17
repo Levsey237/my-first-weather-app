@@ -38,47 +38,38 @@ function displayTemperature(response) {
     if (skyDescription.innerHTML === "Clear") {
       document.documentElement.style.setProperty(mainColor, `#87fce2`);
       document.documentElement.style.setProperty(popColor, `#fec100`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Clouds") {
       document.documentElement.style.setProperty(mainColor, `#5BA0D1`);
       document.documentElement.style.setProperty(popColor, `#F7F3F0`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Rain") {
       document.documentElement.style.setProperty(mainColor, `#A4BED7`);
       document.documentElement.style.setProperty(popColor, `#F6D840`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Mist") {
       document.documentElement.style.setProperty(mainColor, `#e7eaf6`);
       document.documentElement.style.setProperty(popColor, `#ea8a8a`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Snow") {
       document.documentElement.style.setProperty(mainColor, `#fdfff0`);
       document.documentElement.style.setProperty(popColor, `#a2ef44`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Fog") {
       document.documentElement.style.setProperty(mainColor, `#c7db78`);
       document.documentElement.style.setProperty(popColor, `#a98bbb`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Drizzle") {
       document.documentElement.style.setProperty(mainColor, `#E3DBDB`);
       document.documentElement.style.setProperty(popColor, `#7161EF`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Thunderstorm") {
       document.documentElement.style.setProperty(mainColor, `#A5769A`);
       document.documentElement.style.setProperty(popColor, `#F5D127`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
     if (skyDescription.innerHTML === "Haze") {
       document.documentElement.style.setProperty(mainColor, `#D4C4AB`);
       document.documentElement.style.setProperty(popColor, `#ED9759`);
-      document.documentElement.style.setProperty(fontColor, `#222831`);
     }
   }
 
@@ -355,10 +346,10 @@ function displayForecast(response) {
   // create a "row" as used in Bootstrap
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
+        `<div class="col">
       <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
       <img src="http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
@@ -404,6 +395,7 @@ function showSearchedCity(event) {
   event.preventDefault();
   let city = document.querySelector("#searchedCity").value;
   searchCity(city);
+  document.getElementById("searchCityForm").reset();
 }
 
 let searchForm = document.querySelector("#searchCityForm");

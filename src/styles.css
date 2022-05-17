@@ -1,13 +1,29 @@
 :root {
   --main: ;
   --pop: ;
-  --font: #222831;
+  --fs-form: 2rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-current-location-btn: 0.7rem;
+    --fs-day-time: 1rem;
+    --fs-weather-data: 1rem;
+    --fs-weather-forecast: 1.1rem;
+    --fs-data-value: 1.1rem;
+    --fs-date: 1.6rem;
+    --fs-unit: 1.6rem;
+    --fs-city-name: 3.1rem;
+    --fs-temperature: 3.5rem;
+    --fs-search-btn: 4rem;
+    --fs-form: 4rem;
+  }
 }
 
 body {
   background: var(--main);
   font-family: "Readex Pro", sans-serif;
-  color: var(--font);
+  color: #222831;
 }
 
 header {
@@ -17,7 +33,7 @@ header {
 
 form {
   display: block;
-  font-size: 65px;
+  font-size: var(--fs-form);
 }
 
 a:link {
@@ -46,24 +62,23 @@ footer {
 }
 
 .search-button {
-  font-size: 55px;
+  font-size: var(--fs-search-btn);
   color: var(--pop);
   transition: all 175ms ease-in-out;
 }
 
 .search-button:hover {
-  font-size: 65px;
-  color: var(--pop);
+  color: #757575;
 }
 
 .day-time {
   margin-left: 1rem;
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: var(--fs-day-time);
 }
 .date {
   margin-left: 1rem;
-  font-size: 30px;
+  font-size: var(--fs-date);
   font-weight: 500;
 }
 
@@ -74,11 +89,11 @@ footer {
 .city-name {
   margin-bottom: 0;
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: var(--fs-city-name);
 }
 
 .current-location-btn {
-  font-size: 12px;
+  font-size: var(--fs-current-location-btn);
   padding: 2px 8px;
   background-color: var(--pop);
   border: 2px solid var(--pop);
@@ -91,35 +106,34 @@ footer {
 
 .weather-data {
   margin-left: 1rem;
-  font-size: 16px;
+  font-size: var(--fs-weather-data);
   list-style: none;
   line-height: 2rem;
 }
 
 .data-value {
   font-weight: bold;
-  font-size: 18px;
+  font-size: var(--fs-data-value);
 }
 
 .temperature {
-  font-size: 60px;
+  font-size: var(--fs-temperature);
   font-weight: bold;
 }
 
 .unit {
-  font-size: 26px;
+  font-size: var(--fs-unit);
   font-weight: normal;
 }
 
 .unit .active {
-  color: var(--font);
+  color: #222831;
   cursor: default;
   font-weight: bold;
 }
 
 .skyIcon {
   color: var(--pop);
-  font-size: 60px;
   margin-right: 50px;
 }
 
@@ -128,7 +142,7 @@ footer {
   padding-top: 10px;
   border-top: 2px solid var(--pop);
   text-align: center;
-  font-size: 16px;
+  font-size: var(--fs-weather-forecast);
   font-weight: bold;
 }
 
