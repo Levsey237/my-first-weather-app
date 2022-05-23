@@ -1,13 +1,13 @@
 :root {
-  --main: ;
-  --pop: ;
+  --mainColor: ;
+  --popColor: ;
 
   --fs-xxsmall: 0.7rem;
   --fs-xsmall: 0.9rem;
   --fs-small: 1rem;
   --fs-medium: 1.1rem;
   --fs-large: 1.8rem;
-  --fs-xlarge: 2rem;
+  --fs-xlarge: 3rem;
 }
 
 @media (min-width: 750px) {
@@ -22,7 +22,7 @@
 }
 
 body {
-  background: var(--main);
+  background: var(--mainColor);
   color: #222831;
   font-family: "Readex Pro", sans-serif;
 }
@@ -43,15 +43,6 @@ footer {
   text-align: center;
 }
 
-.weather-app {
-  border: 3px solid var(--pop);
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-  max-width: 750px;
-  padding: 10px;
-}
-
 .search-bar {
   background: transparent;
   border: none;
@@ -61,7 +52,7 @@ footer {
 
 .search-button {
   font-size: var(--fs-xlarge);
-  color: var(--pop);
+  color: var(--popColor);
   transition: all 175ms ease-in-out;
 }
 
@@ -69,11 +60,21 @@ footer {
   color: #757575;
 }
 
+.weather-app {
+  border: 3px solid var(--popColor);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 10px;
+}
+
 .day-time {
   font-size: var(--fs-xsmall);
   margin-bottom: 0;
   margin-left: 1rem;
 }
+
 .date {
   font-size: var(--fs-medium);
   font-weight: 500;
@@ -91,16 +92,16 @@ footer {
 }
 
 .current-location-btn {
-  background-color: var(--pop);
-  border: 2px solid var(--pop);
+  background-color: var(--popColor);
+  border: 2px solid var(--popColor);
   font-size: var(--fs-xxsmall);
   font-weight: 600;
   padding: 2px 8px;
 }
 
 .current-location-btn:hover {
-  background-color: var(--main);
-  border: 2px solid var(--pop);
+  background-color: var(--mainColor);
+  border: 2px solid var(--popColor);
 }
 
 .weather-data {
@@ -127,12 +128,8 @@ footer {
   right: 5px;
 }
 
-.skyIcon {
-  color: var(--pop);
-}
-
 .weather-forecast {
-  border-top: 2px solid var(--pop);
+  border-top: 2px solid var(--popColor);
   font-size: var(--fs-small);
   font-weight: bold;
   margin-top: 1rem;

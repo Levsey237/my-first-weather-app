@@ -27,9 +27,8 @@ function displayTemperature(response) {
 
   // Change CSS depending on sky conditions
   function changeColors() {
-    let mainColor = `--main`;
-    let popColor = `--pop`;
-    let fontColor = `--font`;
+    let mainColor = `--mainColor`;
+    let popColor = `--popColor`;
     let skyDescription = document.querySelector("#sky");
     skyDescription.innerHTML = response.data.weather[0].main;
 
