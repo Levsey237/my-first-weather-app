@@ -116,7 +116,7 @@ footer {
 }
 
 .temperature {
-  font-size: var(--fs-large);
+  font-size: var(--fs-xlarge);
   font-weight: bold;
 }
 
