@@ -16,11 +16,6 @@ function displayTemperature(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  document
-    .querySelector("#skyIcon")
-    .setAttribute("alt", response.data.weather[0].main);
-
-  // Convert ISO country name into full country name
   document.querySelector("#country").innerHTML = `${getCountryName(
     response.data.sys.country
   )},`;
